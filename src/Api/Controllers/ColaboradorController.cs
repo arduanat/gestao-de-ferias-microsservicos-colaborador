@@ -40,6 +40,26 @@ namespace App.Controllers
             }
         }
 
+        [HttpDelete]
+        public async Task<Response> Delete(int id = 0)
+        {
+            try
+            {
+                if(id == 0)
+                {
+                    var colaboradores = await contexto.Colaborador.ToListAsync();
+                    contexto.RemoveRange(colaboradores);
+                    await contexto.SaveChangesAsync();
+                }
+
+                return RequestResponse.Success();
+            }
+            catch (Exception exception)
+            {
+                return RequestResponse.Error(exception.Message);
+            }
+        }
+
         private async Task CriarMultiplosAleatoriamente(int quantidade)
         {
             var novosColaboradores = new List<Colaborador>();
