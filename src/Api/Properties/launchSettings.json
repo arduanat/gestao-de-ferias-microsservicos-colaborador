@@ -16,7 +16,6 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "ASPNETCORE_HOSTINGSTARTUPASSEMBLIES": "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation",
-        "ASPNETCORE_Context": "Data Source=DESKTOP-Q2E512I\\SQLEXPRESS;Initial Catalog=GestaoDeFerias-Colaborador;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"
       }
     },
     "Api": {
@@ -28,7 +27,6 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "ASPNETCORE_HOSTINGSTARTUPASSEMBLIES": "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation",
-        "ASPNETCORE_Context": "Data Source=DESKTOP-Q2E512I\\SQLEXPRESS;Initial Catalog=GestaoDeFerias-Colaborador;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"
       }
     }
   }
