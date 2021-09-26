@@ -27,7 +27,7 @@ namespace App.Controllers
         }
 
         [HttpPost]
-        public async Task<Response> Post(int quantidade)
+        public async Task<Response> Post([FromBody] int quantidade)
         {
             try
             {
@@ -41,7 +41,7 @@ namespace App.Controllers
         }
 
         [HttpDelete]
-        public async Task<Response> Delete(int id = 0)
+        public async Task<Response> Delete([FromBody] int id)
         {
             try
             {
