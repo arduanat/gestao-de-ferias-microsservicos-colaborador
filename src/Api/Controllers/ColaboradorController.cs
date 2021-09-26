@@ -19,15 +19,15 @@ namespace App.Controllers
             this.contexto = contexto;
         }
 
-        [HttpGet]
-        public async Task<List<Colaborador>> Get()
+        [HttpGet("ObterColaboradores")]
+        public async Task<List<Colaborador>> ObterColaboradores()
         {
             var colaboradores = await contexto.Colaborador.AsNoTracking().ToListAsync();
             return colaboradores;
         }
 
-        [HttpPost]
-        public async Task<Response> Post([FromBody] int quantidade)
+        [HttpPost("CriarColaboradores")]
+        public async Task<Response> CriarColaboradores([FromBody] int quantidade)
         {
             try
             {
@@ -40,17 +40,14 @@ namespace App.Controllers
             }
         }
 
-        [HttpDelete]
-        public async Task<Response> Delete([FromBody] int id)
+        [HttpDelete("LimparBanco")]
+        public async Task<Response> LimparBanco()
         {
             try
             {
-                if(id == 0)
-                {
-                    var colaboradores = await contexto.Colaborador.ToListAsync();
-                    contexto.RemoveRange(colaboradores);
-                    await contexto.SaveChangesAsync();
-                }
+                var colaboradores = await contexto.Colaborador.ToListAsync();
+                contexto.RemoveRange(colaboradores);
+                await contexto.SaveChangesAsync();
 
                 return RequestResponse.Success();
             }
